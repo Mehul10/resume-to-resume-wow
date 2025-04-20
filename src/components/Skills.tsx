@@ -1,17 +1,49 @@
-
 const Skills = () => {
   const skillCategories = [
     {
       category: "Languages & Frameworks",
-      skills: ["Java", "Spring Boot", "TypeScript", "Node.js", "Express.js", "React"]
+      skills: [
+        "Java",
+        "Spring Boot",
+        "Python",
+        "Django",
+        "Django REST Framework",
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "React"
+      ]
+    },
+    {
+      category: "Cloud & DevOps",
+      skills: [
+        "Azure",
+        "Azure DevOps",
+        "Kubernetes",
+        "Docker",
+        "Jenkins",
+        "CI/CD"
+      ]
     },
     {
       category: "Databases & Tools",
-      skills: ["PostgreSQL", "MySQL", "GraphQL", "Azure", "Git"]
+      skills: [
+        "PostgreSQL",
+        "MySQL",
+        "GraphQL",
+        "Git",
+        "JIRA"
+      ]
     },
     {
-      category: "Testing & DevOps",
-      skills: ["Cypress", "Jenkins", "JIRA", "Docker"]
+      category: "Testing",
+      skills: [
+        "Cypress",
+        "Jest",
+        "JUnit",
+        "Integration Testing",
+        "API Testing"
+      ]
     }
   ];
 
