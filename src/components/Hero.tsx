@@ -1,3 +1,4 @@
+
 import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 const Hero = () => {
@@ -24,7 +25,7 @@ const Hero = () => {
                  className="p-2 rounded-full hover:bg-gray-100 transition-colors">
                 <Mail className="w-6 h-6" />
               </a>
-              <a href="https://www.linkedin.com/in/mehhul/" target="_blank" rel="noopener noreferrer" 
+              <a href="https://www.linkedin.com/in/mehul-bhandari-4ba58b168/" target="_blank" rel="noopener noreferrer" 
                  className="p-2 rounded-full hover:bg-gray-100 transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
@@ -34,11 +35,11 @@ const Hero = () => {
               </a>
             </div>
           </div>
-          <div className="order-1 md:order-2 flex justify-center md:mb-40">
+          <div className="order-1 md:order-2 flex justify-center md:pb-48">
             <img 
               src="/lovable-uploads/9f30336a-c68d-4316-8062-292b9259a508.png"
               alt="Mehul Bhandari"
-              className="rounded-full w-48 h-48 object-cover shadow-lg animate-fade-in md:mb-40"
+              className="rounded-full w-48 h-48 object-cover shadow-lg animate-fade-in md:mb-16"
             />
           </div>
         </div>
