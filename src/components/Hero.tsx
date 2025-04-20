@@ -1,4 +1,3 @@
-
 import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 const Hero = () => {
@@ -35,11 +34,11 @@ const Hero = () => {
               </a>
             </div>
           </div>
-          <div className="order-1 md:order-2 flex justify-center md:mb-16">
+          <div className="order-1 md:order-2 flex justify-center md:mb-24">
             <img 
               src="/lovable-uploads/9f30336a-c68d-4316-8062-292b9259a508.png"
               alt="Mehul Bhandari"
-              className="rounded-full w-48 h-48 object-cover shadow-lg animate-fade-in md:mb-16"
+              className="rounded-full w-48 h-48 object-cover shadow-lg animate-fade-in md:mb-24"
             />
           </div>
         </div>
@@ -49,4 +48,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
