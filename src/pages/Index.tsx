@@ -5,6 +5,7 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import LeetCode from "@/components/LeetCode";
+import Certificates from "@/components/Certificates";
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Experience />
+      <Certificates />
       <LeetCode />
       <Projects />
       <Skills />

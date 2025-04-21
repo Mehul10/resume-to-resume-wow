@@ -1,4 +1,3 @@
-
 const Experience = () => {
   const experiences = [
     {
@@ -28,18 +27,18 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-white">
+    <section id="experience" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-primary mb-12">Experience</h2>
+        <h2 className="text-3xl font-bold text-foreground mb-12">Experience</h2>
         <div className="space-y-12">
           {experiences.map((exp, index) => (
-            <div key={index} className="border-l-2 border-gray-200 pl-4 animate-fade-in">
-              <h3 className="text-xl font-semibold text-primary">{exp.company}</h3>
-              <p className="text-secondary font-medium mt-1">{exp.role}</p>
-              <p className="text-gray-500 text-sm mt-1">{exp.period} | {exp.location}</p>
+            <div key={index} className="border-l-2 border-border pl-4 animate-fade-in">
+              <h3 className="text-xl font-semibold text-foreground">{exp.company}</h3>
+              <p className="text-muted-foreground font-medium mt-1">{exp.role}</p>
+              <p className="text-muted-foreground text-sm mt-1">{exp.period} | {exp.location}</p>
               <ul className="mt-4 space-y-2">
                 {exp.highlights.map((highlight, i) => (
-                  <li key={i} className="text-gray-600">• {highlight}</li>
+                  <li key={i} className="text-muted-foreground">• {highlight}</li>
                 ))}
               </ul>
             </div>

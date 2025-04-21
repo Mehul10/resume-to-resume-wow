@@ -1,4 +1,3 @@
-
 const Projects = () => {
   const projects = [
     {
@@ -26,25 +25,25 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="py-20 bg-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-primary mb-12">Projects</h2>
+        <h2 className="text-3xl font-bold text-foreground mb-12">Projects</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-sm animate-fade-in">
-              <h3 className="text-xl font-semibold text-primary">{project.title}</h3>
-              <p className="text-gray-500 text-sm mt-1">{project.period}</p>
-              <p className="text-gray-600 mt-3">{project.description}</p>
+            <div key={index} className="bg-background p-6 rounded-lg shadow-sm animate-fade-in">
+              <h3 className="text-xl font-semibold text-foreground">{project.title}</h3>
+              <p className="text-muted-foreground text-sm mt-1">{project.period}</p>
+              <p className="text-muted-foreground mt-3">{project.description}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.tech.map((tech, i) => (
-                  <span key={i} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
+                  <span key={i} className="text-xs bg-muted text-muted-foreground px-2 py-1 rounded">
                     {tech}
                   </span>
                 ))}
               </div>
               <ul className="mt-4 space-y-2">
                 {project.highlights.map((highlight, i) => (
-                  <li key={i} className="text-gray-600 text-sm">• {highlight}</li>
+                  <li key={i} className="text-muted-foreground text-sm">• {highlight}</li>
                 ))}
               </ul>
             </div>

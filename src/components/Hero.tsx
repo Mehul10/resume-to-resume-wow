@@ -43,11 +43,11 @@ const Hero = () => {
   };
 
   return (
-    <section id="about" className="min-h-screen flex items-center pt-16 bg-gradient-to-b from-background to-muted/50 dark:from-background dark:to-muted/50 relative">
+    <section id="about" className="min-h-screen flex flex-col justify-center relative bg-gradient-to-b from-background to-muted/50 dark:from-background dark:to-muted/50">
       <div className="absolute top-4 right-4 z-50">
         <ThemeToggle />
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow flex items-center">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-fade-in">
@@ -133,6 +133,14 @@ const Hero = () => {
               style={{ objectPosition: '50% 30%' }}
             />
           </div>
+        </div>
+      </div>
+      
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+        <span className="text-muted-foreground text-sm mb-2">Scroll to explore</span>
+        <div className="w-6 h-10 border-2 border-muted-foreground rounded-full p-1">
+          <div className="w-1.5 h-1.5 bg-muted-foreground rounded-full mx-auto animate-scroll-down"></div>
         </div>
       </div>
     </section>

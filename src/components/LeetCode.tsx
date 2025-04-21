@@ -106,78 +106,78 @@ const LeetCode = () => {
   }, []);
 
   return (
-    <section id="leetcode" className="py-20 bg-gray-50">
+    <section id="leetcode" className="py-20 bg-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-primary mb-4">LeetCode Journey</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-foreground mb-4">LeetCode Journey</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Consistently solving algorithmic challenges and improving problem-solving skills. Beats 97.3% of users in problem-solving proficiency.
           </p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-6 mb-12">
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-background p-6 rounded-lg shadow-md">
             <div className="flex items-center mb-4">
               <Trophy className="w-6 h-6 text-yellow-500 mr-2" />
-              <h3 className="text-lg font-semibold">Problems Solved</h3>
+              <h3 className="text-lg font-semibold text-foreground">Problems Solved</h3>
             </div>
-            <p className="text-3xl font-bold text-primary">
+            <p className="text-3xl font-bold text-foreground">
               {loading ? "..." : stats.totalSolved}
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-background p-6 rounded-lg shadow-md">
             <div className="flex items-center mb-4">
               <Target className="w-6 h-6 text-green-500 mr-2" />
-              <h3 className="text-lg font-semibold">Global Ranking</h3>
+              <h3 className="text-lg font-semibold text-foreground">Global Ranking</h3>
             </div>
-            <p className="text-3xl font-bold text-primary">
+            <p className="text-3xl font-bold text-foreground">
               {loading ? "..." : stats.ranking}
             </p>
-            <p className="text-sm text-gray-600">Beats 97.3% users</p>
+            <p className="text-sm text-muted-foreground">Beats 97.3% users</p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-background p-6 rounded-lg shadow-md">
             <div className="flex items-center mb-4">
               <Code2 className="w-6 h-6 text-blue-500 mr-2" />
-              <h3 className="text-lg font-semibold">Contest Rating</h3>
+              <h3 className="text-lg font-semibold text-foreground">Contest Rating</h3>
             </div>
-            <p className="text-3xl font-bold text-primary">
+            <p className="text-3xl font-bold text-foreground">
               {loading ? "..." : stats.contestRating}
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-background p-6 rounded-lg shadow-md">
             <div className="flex items-center mb-4">
               <Star className="w-6 h-6 text-purple-500 mr-2" />
-              <h3 className="text-lg font-semibold">Streak</h3>
+              <h3 className="text-lg font-semibold text-foreground">Streak</h3>
             </div>
-            <p className="text-3xl font-bold text-primary">
+            <p className="text-3xl font-bold text-foreground">
               {loading ? "..." : stats.streak}
             </p>
           </div>
         </div>
 
-        <div className="bg-white p-8 rounded-lg shadow-md">
-          <h3 className="text-xl font-semibold mb-6">Problem Solving Distribution</h3>
+        <div className="bg-background p-8 rounded-lg shadow-md">
+          <h3 className="text-xl font-semibold text-foreground mb-6">Problem Solving Distribution</h3>
           <div className="grid grid-cols-3 gap-4">
             <div className="text-center">
               <div className="text-green-500 font-bold text-2xl mb-1">
                 {loading ? "..." : `${stats.distribution.easy}+`}
               </div>
-              <div className="text-sm text-gray-600">Easy</div>
+              <div className="text-sm text-muted-foreground">Easy</div>
             </div>
             <div className="text-center">
               <div className="text-yellow-500 font-bold text-2xl mb-1">
                 {loading ? "..." : `${stats.distribution.medium}+`}
               </div>
-              <div className="text-sm text-gray-600">Medium</div>
+              <div className="text-sm text-muted-foreground">Medium</div>
             </div>
             <div className="text-center">
               <div className="text-red-500 font-bold text-2xl mb-1">
                 {loading ? "..." : `${stats.distribution.hard}+`}
               </div>
-              <div className="text-sm text-gray-600">Hard</div>
+              <div className="text-sm text-muted-foreground">Hard</div>
             </div>
           </div>
         </div>
@@ -187,7 +187,7 @@ const LeetCode = () => {
             href="https://leetcode.com/u/mehhul/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-foreground text-background font-semibold rounded-lg hover:bg-foreground/90 transition-colors"
           >
             View Full Profile
             <svg
