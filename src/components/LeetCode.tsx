@@ -156,7 +156,7 @@ const LeetCode = () => {
             <p className="text-3xl font-bold text-foreground">
               {loading ? "..." : stats.ranking}
             </p>
-            <p className="text-sm text-muted-foreground">Beats 97.4% users</p>
+            <p className="text-sm text-muted-foreground">Beats 97.7% users</p>
           </div>
 
           <div className="bg-background p-6 rounded-lg shadow-md">
