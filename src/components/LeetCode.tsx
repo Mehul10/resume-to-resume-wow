@@ -16,36 +16,59 @@ interface LeetCodeStats {
 const calculateStreak = (submissionCalendar: Record<string, number>) => {
   if (!submissionCalendar) return 0;
   
-  const today = Math.floor(Date.now() / 1000);
   const oneDayInSeconds = 86400;
-  let currentStreak = 0;
-  let date = today;
+  
+  // Get today's date at midnight UTC
+  const todayMidnight = new Date();
+  todayMidnight.setUTCHours(0, 0, 0, 0);
+  const todayTimestamp = Math.floor(todayMidnight.getTime() / 1000);
+  
+  // Get yesterday's timestamp
+  const yesterdayTimestamp = todayTimestamp - oneDayInSeconds;
 
   // Convert submission calendar keys to numbers and sort them
   const submissions = Object.keys(submissionCalendar)
     .map(key => parseInt(key))
     .sort((a, b) => b - a); // Sort in descending order
 
-  // If no submissions or last submission was not today/yesterday, return 0
-  if (submissions.length === 0 || 
-      (submissions[0] < (today - oneDayInSeconds))) {
+  if (submissions.length === 0) return 0;
+
+  // Get the most recent submission timestamp
+  const lastSubmission = submissions[0];
+  const lastSubmissionDate = new Date(lastSubmission * 1000);
+  lastSubmissionDate.setUTCHours(0, 0, 0, 0);
+  const lastSubmissionTimestamp = Math.floor(lastSubmissionDate.getTime() / 1000);
+
+  // If the last submission was before yesterday, the streak is broken
+  if (lastSubmissionTimestamp < yesterdayTimestamp) {
     return 0;
   }
 
   // Calculate streak
-  for (let i = 0; i < submissions.length; i++) {
-    const submissionDate = submissions[i];
-    const expectedDate = today - (currentStreak * oneDayInSeconds);
+  let streak = 0;
+  let currentDate = lastSubmissionTimestamp;
+  
+  for (const submission of submissions) {
+    const submissionDate = new Date(submission * 1000);
+    submissionDate.setUTCHours(0, 0, 0, 0);
+    const submissionTimestamp = Math.floor(submissionDate.getTime() / 1000);
     
-    if (Math.abs(submissionDate - expectedDate) <= oneDayInSeconds) {
-      currentStreak++;
-      date = submissionDate;
+    if (submissionTimestamp === currentDate || submissionTimestamp === currentDate - oneDayInSeconds) {
+      if (submissionTimestamp === currentDate - oneDayInSeconds) {
+        streak++;
+        currentDate = submissionTimestamp;
+      }
     } else {
       break;
     }
   }
 
-  return currentStreak;
+  // If the last submission was today, add one to the streak
+  if (lastSubmissionTimestamp === todayTimestamp) {
+    streak++;
+  }
+
+  return streak;
 };
 
 const LeetCode = () => {
@@ -74,8 +97,8 @@ const LeetCode = () => {
         
         setStats({
           totalSolved: `${data.totalSolved}+`,
-          ranking: "Top 2.7%", // Hardcoded since we know the accurate value
-          contestRating: data.contestRating?.toString() || "1532",
+          ranking: "Top 2.6%",
+          contestRating: "1532",
           streak: streakValue,
           distribution: {
             easy: data.easySolved || 0,
@@ -86,10 +109,9 @@ const LeetCode = () => {
         setLoading(false);
       } catch (error) {
         console.error('Error fetching LeetCode stats:', error);
-        // Fallback to static data if API fails
         setStats({
           totalSolved: "200+",
-          ranking: "Top 2.7%",
+          ranking: "Top 2.6%",
           contestRating: "1532",
           streak: "0 days",
           distribution: {
@@ -111,7 +133,7 @@ const LeetCode = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-foreground mb-4">LeetCode Journey</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Consistently solving algorithmic challenges and improving problem-solving skills. Beats 97.3% of users in problem-solving proficiency.
+            Consistently solving algorithmic challenges and improving problem-solving skills. Beats 97.4% of users in problem-solving proficiency.
           </p>
         </div>
 
@@ -134,7 +156,7 @@ const LeetCode = () => {
             <p className="text-3xl font-bold text-foreground">
               {loading ? "..." : stats.ranking}
             </p>
-            <p className="text-sm text-muted-foreground">Beats 97.3% users</p>
+            <p className="text-sm text-muted-foreground">Beats 97.4% users</p>
           </div>
 
           <div className="bg-background p-6 rounded-lg shadow-md">
@@ -150,11 +172,12 @@ const LeetCode = () => {
           <div className="bg-background p-6 rounded-lg shadow-md">
             <div className="flex items-center mb-4">
               <Star className="w-6 h-6 text-purple-500 mr-2" />
-              <h3 className="text-lg font-semibold text-foreground">Streak</h3>
+              <h3 className="text-lg font-semibold text-foreground">Daily Challenge Streak</h3>
             </div>
             <p className="text-3xl font-bold text-foreground">
               {loading ? "..." : stats.streak}
             </p>
+            <p className="text-sm text-muted-foreground">Consecutive daily problems</p>
           </div>
         </div>
 

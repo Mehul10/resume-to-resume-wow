@@ -13,8 +13,8 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Experience />
-      <Certificates />
       <LeetCode />
+      <Certificates />
       <Projects />
       <Skills />
       <Contact />

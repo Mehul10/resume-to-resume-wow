@@ -8,6 +8,13 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    proxy: {
+      '/graphql': {
+        target: 'https://leetcode.com',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
   },
   plugins: [
     react(),
@@ -19,4 +26,8 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  define: {
+    'process.env.LEETCODE_USERNAME': JSON.stringify(process.env.LEETCODE_USERNAME),
+    'process.env.LEETCODE_PASSWORD': JSON.stringify(process.env.LEETCODE_PASSWORD),
+  }
 }));

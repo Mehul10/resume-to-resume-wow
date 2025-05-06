@@ -69,9 +69,8 @@ const Hero = () => {
                 </DialogTrigger>
                 <DialogContent className="max-w-4xl h-[80vh] bg-background dark:bg-background">
                   <iframe
-                    src="https://drive.google.com/file/d/1HUmj0h3k5xR51dw8NAYoK2V8W6dj0p-e/preview"
+                    src="/Mehul_Bhandari_Resume.pdf"
                     className="w-full h-full"
-                    allow="autoplay"
                   ></iframe>
                 </DialogContent>
               </Dialog>
