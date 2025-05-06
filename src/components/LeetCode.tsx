@@ -97,7 +97,7 @@ const LeetCode = () => {
         
         setStats({
           totalSolved: `${data.totalSolved}+`,
-          ranking: "Top 2.6%",
+          ranking: "Top 2.3%",
           contestRating: "1532",
           streak: streakValue,
           distribution: {
