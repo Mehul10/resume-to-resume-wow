@@ -97,7 +97,7 @@ const LeetCode = () => {
         
         setStats({
           totalSolved: `${data.totalSolved}+`,
-          ranking: "Top 2.3%",
+          ranking: "Top 1.8%",
           contestRating: "1532",
           streak: streakValue,
           distribution: {
@@ -156,7 +156,7 @@ const LeetCode = () => {
             <p className="text-3xl font-bold text-foreground">
               {loading ? "..." : stats.ranking}
             </p>
-            <p className="text-sm text-muted-foreground">Beats 97.7% users</p>
+            <p className="text-sm text-muted-foreground">Beats 98.2% users</p>
           </div>
 
           <div className="bg-background p-6 rounded-lg shadow-md">
