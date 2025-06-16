@@ -97,14 +97,14 @@ const LeetCode = () => {
         
         setStats({
           totalSolved: `${data.totalSolved}+`,
-          ranking: "Top 1.8%",
+          ranking: "Top 1.9%",
           contestRating: "1532",
           streak: streakValue,
           distribution: {
             easy: data.easySolved || 0,
             medium: data.mediumSolved || 0,
             hard: data.hardSolved || 0
-          }
+          }ß
         });
         setLoading(false);
       } catch (error) {
